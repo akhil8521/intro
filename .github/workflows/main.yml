@@ -22,9 +22,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-          
       - name: GCP Cloud Storage: Deploy
         # You may pin to the exact commit or the version.
         # uses: abinmn/gcp-storage-bucket-action@db210e26048a30d98e1095b372b3b02b29432e65
@@ -33,7 +30,7 @@ jobs:
           # GCP service key encoded as base64. The account associated with the key should have permissions to make changes in storage bucket.
           service_key: secret
           # The folder you want to deploy. Default is the repository. You can change this value if you have a build step and point this to that build folder.
-          build_folder: ./**
+          build_folder: ./
           # Bucket name
           bucket_name: univeris-part2.akhil.cloud
           # Name of the project that contains the storage bucket.
